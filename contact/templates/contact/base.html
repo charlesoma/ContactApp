@@ -1,0 +1,25 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Contact App</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+    </head>
+    <body>
+        <div class="page-header center-block container">
+            <h1><a href="/">CONTACT APP</a></h1>
+            <p>Welcome! Click a button below.</p>
+            <a href="{% url 'contact:contact_new' %}"><button class="btn btn-primary">Create contact</button></a>
+            <a href="{% url 'contact:contact_list' %}"><button class="btn btn-primary">List contacts</button></a>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    {% block content %}
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
